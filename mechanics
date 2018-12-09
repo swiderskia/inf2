@@ -1,0 +1,127 @@
+/*#include <stdio.h>
+#include <math.h>
+#include "winbgi2.h"
+#include <time.h>
+#include <stdlib.h>
+#include "inter.h"
+#include "nonlin.h"
+
+
+
+double funkcja(double t)
+{
+	double yy;
+	double wynik;
+	double n;
+	//double t = 0.0;
+	srand(time(NULL));
+	double x[10], y[10];
+	double a = 5;
+	int liczbaPunktow;
+	FILE* plik = fopen("plik.dat", "r");
+	graphics(600, 600);
+	scale(0., -10., 10., 10.);
+
+	fprintf(plik, "%d\n", 10);
+
+
+
+	fscanf(plik, "%d", &liczbaPunktow);
+	for (int i = 0; i < 20; i++)
+	{
+		if (i % 2 == 0)
+			fscanf(plik, "%lf", &x[i / 2]);
+		if (i % 2 == 1)
+			fscanf(plik, "%lf", &y[i / 2]);
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		//printf("%lf\t", x[i]);
+		//printf("%lf\n", y[i]);
+	}
+	fclose(plik);
+
+	for (int i = 0; i < 1/0.01; i++)
+	{
+		t += 0.1;
+		yy = lagrange(x, y, 10, t);
+		circle(t, yy, 2);
+	}
+	return yy;
+}
+
+/*double funBi(double x)
+{
+	return lagrange(x, y, n, yy);
+}*/
+
+void sortuj(double* x, double* y)
+{
+	for (int i = 0; i < 9; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			//if(x[i+1]>x[i])
+
+		}
+	}
+}
+
+/*
+
+void main()
+{
+	double krok = 0.001;
+	int kroki;
+	double t = 0.0;
+	int iter[10];
+	double x=0.0;
+	double z[20];
+	int j = 0;
+	/*double yy;
+	double wynik;
+	double n;
+	double t = 0.0;
+	srand(time(NULL));
+	double x[10], y[10];
+	double a=5;
+	int liczbaPunktow;
+	FILE* plik = fopen("plik.dat", "r");
+	graphics(600,600);
+	scale(0., -10., 10., 10.);
+
+	fprintf(plik, "%d\n", 10);
+
+	
+
+	fscanf(plik, "%d", &liczbaPunktow);
+	for (int i = 0; i < 20; i++)
+	{
+		if (i % 2 == 0)
+			fscanf(plik, "%lf", &x[i / 2]);
+		if (i % 2 == 1)
+			fscanf(plik, "%lf", &y[i / 2]);
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%lf\t", x[i]);
+		printf("%lf\n", y[i]);
+	}
+	fclose(plik);
+	*/
+	//funkcja(x);
+	/*
+	for (int i = 0; i < 100 / 0.1; i++)
+	{
+		if (funkcja(t)*funkcja(t + krok))
+		{
+			z[j] = bisec(-2., 12., funkcja, 0.05, &kroki);
+		}
+	}
+	for (int i = j; i >= 0; i--)
+		printf("%lf\n", z[i]);
+	wait();
+}
+*/
